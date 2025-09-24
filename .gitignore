@@ -1,0 +1,34 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Build folder
+bin/
+dist/
+build/
+
+# Go modules
+/go.sum
+
+# Vendor (jika tidak digunakan)
+vendor/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Coverage / test
+*.cover
+coverage.out

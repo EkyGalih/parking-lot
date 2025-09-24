@@ -15,7 +15,6 @@ type ParkingController struct {
 	Lot *models.ParkingLot
 }
 
-
 // HanndleCommand memproses input dari user
 func (c *ParkingController) HandleCommand(line string) {
 	parts := strings.Fields(line)
@@ -34,12 +33,15 @@ func (c *ParkingController) HandleCommand(line string) {
 		c.Lot = models.NewParkingLot(n)
 		views.Print(fmt.Sprintf("Created a parking lot with %d slots", n))
 	case "park":
-		// Menambahkan kendaraan ke slot kosong
-		if len(parts) < 2 || c.Lot == nil {
+		if c.Lot == nil {
 			views.Print("Parking lot not created")
 			return
 		}
-		slot, err := c.Lot.Park((parts[1]))
+
+		reg := views.Input("Reg No: ")
+		color := views.Input("Color: ")
+
+		slot, err := c.Lot.Park(reg, color)
 		if err != nil {
 			if err.Error() == "full" {
 				views.Print("Sorry, parking lot is full")

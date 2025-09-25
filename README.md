@@ -8,19 +8,19 @@ Project ini merupakan implementasi sederhana untuk mengelola parkiran, termasuk 
 
 ```
 .
-├── pengontrol
+├── controllers
 │ └── parking_controller.go # Menangani perintah dan koneksi ke model & tampilan
 │
 ├── model
 │ ├── int_heap.go # Implementasi min-heap untuk slot yang tersedia
 │ └── parking_lot.go # Tempat logika bisnis sistem
 │
-├── dilihat
+├── views
 │ └── parking_view.go # melibatkan tampilan CLI
 │
 ├── main.go # Entri Poin dari aplikasi
 ├── go.mod # Definisi Go Module
-└── go.sum # Kunci File Go
+└── go.sum # main File Go
 ```
 
 ---
